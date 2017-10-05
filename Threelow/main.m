@@ -20,27 +20,14 @@ int main(int argc, const char * argv[]) {
                 continue;
             } else {
             
-        Dice *firstDiceObj = [[Dice alloc]init];
-        [diceArr addObject:firstDiceObj];
-        NSLog(@"%@", [firstDiceObj randomValue]);
+                for (int i = 0 ; i < 5; i++){
+                    Dice *diceObj = [[Dice alloc] init];
+                    [diceArr addObject: diceObj];
+                    NSLog(@"%@", [diceObj randomValue]);
+                }
         
-        Dice *secondDiceObj = [[Dice alloc]init];
-        [diceArr addObject:secondDiceObj];
-        NSLog(@"%@", [secondDiceObj randomValue]);
-        
-        Dice *thirdDiceObj = [[Dice alloc]init];
-        [diceArr addObject:thirdDiceObj];
-        NSLog(@"%@", [thirdDiceObj randomValue]);
-        
-        Dice *fourthDiceObj = [[Dice alloc]init];
-        [diceArr addObject:fourthDiceObj];
-        NSLog(@"%@", [fourthDiceObj randomValue]);
-        
-        Dice *fifthDiceObj = [[Dice alloc]init];
-        [diceArr addObject:firstDiceObj];
-        NSLog(@"%@", [fifthDiceObj randomValue]);
             
- //       NSLog(@"%lu", (unsigned long)[diceArr count]);
+       NSLog(@"%lu", (unsigned long)[diceArr count]);
             }
             
         }

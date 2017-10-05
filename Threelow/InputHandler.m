@@ -5,7 +5,7 @@
 -(NSString *)getUsersAnswer {
     char answerCString;
     
-    printf("Roll the dice (roll/quit) >>>");
+    printf("Roll the dice (roll/quit) >>> ");
     fgets(&answerCString, 255, stdin);
     
     NSString *result = [NSString stringWithCString:&answerCString
