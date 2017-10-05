@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
         
         while (gameOn == 1) {
             
-            NSString *userInp = [inputHandler inputForPrompt:@"What Would you like to Do? \n - roll \n - hold \n - reset \n - quit"];
+            NSString *userInp = [inputHandler inputForPrompt:@"What Would you like to Do? \n - roll \n - hold/unhold \n - reset \n - quit"];
             
             if ([userInp isEqual: @"quit"]) {
                 gameOn = NO;
@@ -21,7 +21,7 @@ int main(int argc, const char * argv[]) {
             } else if ([userInp isEqual: @"roll"]) {
                 [gameController roll];
             }
-                else if ([userInp isEqual: @"hold"]) {
+                else if ([userInp isEqual: @"hold"] || [userInp isEqual:@"unhold"]) {
                     NSString *userInp = [inputHandler inputForPrompt:@"Which Dice would you like to Hold? (number): "];
                     
                     //TODO: input chek

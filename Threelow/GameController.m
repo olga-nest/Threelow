@@ -32,9 +32,16 @@
 
 - (void)hold: (Dice *) dieToHold {
     
+    if (dieToHold.isHeld == NO) {
     [self.heldDiceSet addObject:dieToHold];
     [dieToHold setIsHeld:YES];
-    NSLog(@"objects in heldDiceSet %lu", [self.heldDiceSet count]);
+  //  NSLog(@"objects in heldDiceSet %lu", [self.heldDiceSet count]);
+    } else if (dieToHold.isHeld == YES) {
+        [self.heldDiceSet removeObject:dieToHold];
+        [dieToHold setIsHeld:NO];
+        NSLog(@"You unhold [%@]",  [dieToHold previousValue]);
+    }
+    
 }
 
 -(void)resetDice {
