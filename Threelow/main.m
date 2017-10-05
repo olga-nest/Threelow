@@ -1,37 +1,35 @@
 #import <Foundation/Foundation.h>
 #import "Dice.h"
 #import "InputHandler.h"
+#import "GameController.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         BOOL gameOn = YES;
         
-        NSMutableArray *diceArr = [[NSMutableArray alloc]init];
-        NSMutableSet *heldDice = [[NSMutableSet alloc]init];
+        GameController *gameController = [[GameController alloc]init];
+        
         
         while (gameOn == 1) {
             
             
             InputHandler *inputHandler = [InputHandler new];
-            NSString *userInp = [inputHandler getUsersAnswer];
+            NSString *userInp = [inputHandler inputForPrompt:@"Roll the dice (roll/quit)"];
             
             if ([userInp isEqual: @"quit"]) {
                 gameOn = NO;
                 continue;
             } else if ([userInp isEqual: @"roll"]) {
-            
-                for (int i = 0 ; i < 5; i++){
-                    Dice *diceObj = [[Dice alloc] init];
-                    [diceArr addObject: diceObj];
-                    NSLog(@"%@", [diceObj randomValue]);
-                } else if ([userInp isEqual: @"hold"]) {
-                    [heldDice addObject: dice];
-                }
+                [gameController roll];
+            }
+                //else if ([userInp isEqual: @"hold"]) {
+                //    [heldDiceSet addObject: dice];
+                //}
         
             
    //    NSLog(@"%lu", (unsigned long)[diceArr count]);
-            }
+            
             
         }
     }
