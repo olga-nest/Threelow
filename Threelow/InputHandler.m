@@ -2,21 +2,22 @@
 
 @implementation InputHandler
 
--(NSString *)getUsersAnswer {
-    char answerCString;
+-(NSString *)inputForPrompt:(NSString *)promptString {
+    NSLog(@"%@", promptString);
     
-    printf("Roll the dice (roll/quit) >>> ");
-    fgets(&answerCString, 255, stdin);
+    char answerCString[255];
     
-    NSString *result = [NSString stringWithCString:&answerCString
+    fgets(answerCString, 255, stdin);
+    
+    NSString *result = [NSString stringWithCString:answerCString
                                           encoding:NSUTF8StringEncoding];
     
-    
     //removes new line and white spaces
-    NSCharacterSet *resultSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-    NSString *usersInp = [result stringByTrimmingCharactersInSet:(NSCharacterSet *)resultSet];
-
-    return usersInp;
+    //   NSCharacterSet *resultSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString *parsedResult = [result stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    return parsedResult;
+    
 }
 
 @end

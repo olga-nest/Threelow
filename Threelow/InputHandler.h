@@ -2,6 +2,6 @@
 
 @interface InputHandler : NSObject
 
--(NSString *)getUsersAnswer;
+-(NSString *)inputForPrompt:(NSString *)promptString;
 
 @end
