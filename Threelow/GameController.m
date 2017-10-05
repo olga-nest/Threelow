@@ -25,7 +25,7 @@
         if ([self.heldDiceSet containsObject:dice] != YES) {
             NSLog(@"%@", [dice randomValue]);
         } else {
-            NSLog(@"[%@]", [dice ]);
+            NSLog(@"[%@]", [dice previousValue]);
         }
     }
 }
