@@ -3,6 +3,7 @@
 @interface Dice : NSObject
 
 @property (nonatomic) int currentValue;
+@property bool isHeld;
 
 -(NSString *)randomValue;
 

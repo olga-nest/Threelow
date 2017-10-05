@@ -2,6 +2,15 @@
 
 @implementation Dice
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.isHeld = NO;
+    }
+    return self;
+}
+
 -(NSString *)randomValue {
     NSArray *randomValuesArr = [[NSArray alloc]initWithObjects:@"I", @"II", @"III", @"IV", @"V", @"VI", nil];
     

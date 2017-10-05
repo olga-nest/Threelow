@@ -9,12 +9,10 @@ int main(int argc, const char * argv[]) {
         BOOL gameOn = YES;
         
         GameController *gameController = [[GameController alloc]init];
-        
+        InputHandler *inputHandler = [InputHandler new];
         
         while (gameOn == 1) {
             
-            
-            InputHandler *inputHandler = [InputHandler new];
             NSString *userInp = [inputHandler inputForPrompt:@"What Would you like to Do? \n - roll \n - hold \n - quit"];
             
             if ([userInp isEqual: @"quit"]) {
@@ -25,6 +23,9 @@ int main(int argc, const char * argv[]) {
             }
                 else if ([userInp isEqual: @"hold"]) {
                     NSString *userInp = [inputHandler inputForPrompt:@"Which Dice would you like to Hold? (number): "];
+                    
+                    //TODO: input chek
+                    
                     Dice *diceAtIndex = [gameController.diceArr objectAtIndex:[userInp intValue] - 1];
                     [gameController hold:diceAtIndex];
                     
