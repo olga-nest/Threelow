@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "Dice.h"
 
 @interface GameController : NSObject
 
@@ -7,5 +8,6 @@
 
 
 - (void)roll;
+- (void)hold: (Dice *) dieToHold;
 
 @end

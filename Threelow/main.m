@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
             
             
             InputHandler *inputHandler = [InputHandler new];
-            NSString *userInp = [inputHandler inputForPrompt:@"Roll the dice (roll/quit)"];
+            NSString *userInp = [inputHandler inputForPrompt:@"What Would you like to Do? \n - roll \n - hold \n - quit"];
             
             if ([userInp isEqual: @"quit"]) {
                 gameOn = NO;
@@ -23,9 +23,12 @@ int main(int argc, const char * argv[]) {
             } else if ([userInp isEqual: @"roll"]) {
                 [gameController roll];
             }
-                //else if ([userInp isEqual: @"hold"]) {
-                //    [heldDiceSet addObject: dice];
-                //}
+                else if ([userInp isEqual: @"hold"]) {
+                    NSString *userInp = [inputHandler inputForPrompt:@"Which Dice would you like to Hold? (number): "];
+                    Dice *diceAtIndex = [gameController.diceArr objectAtIndex:[userInp intValue] - 1];
+                    [gameController hold:diceAtIndex];
+                    
+                }
         
             
    //    NSLog(@"%lu", (unsigned long)[diceArr count]);
