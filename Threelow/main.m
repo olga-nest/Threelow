@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
         
         while (gameOn == 1) {
             
-            NSString *userInp = [inputHandler inputForPrompt:@"What Would you like to Do? \n - roll \n - hold \n - quit"];
+            NSString *userInp = [inputHandler inputForPrompt:@"What Would you like to Do? \n - roll \n - hold \n - reset \n - quit"];
             
             if ([userInp isEqual: @"quit"]) {
                 gameOn = NO;
@@ -29,11 +29,9 @@ int main(int argc, const char * argv[]) {
                     Dice *diceAtIndex = [gameController.diceArr objectAtIndex:[userInp intValue] - 1];
                     [gameController hold:diceAtIndex];
                     
+                } else if ([userInp isEqual: @"reset"]) {
+                    [gameController resetDice];
                 }
-        
-            
-   //    NSLog(@"%lu", (unsigned long)[diceArr count]);
-            
             
         }
     }

@@ -13,7 +13,6 @@
                                           encoding:NSUTF8StringEncoding];
     
     //removes new line and white spaces
-    //   NSCharacterSet *resultSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     NSString *parsedResult = [result stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     return parsedResult;

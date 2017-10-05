@@ -9,5 +9,6 @@
 
 - (void)roll;
 - (void)hold: (Dice *) dieToHold;
+- (void)resetDice;
 
 @end

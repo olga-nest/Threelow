@@ -37,15 +37,8 @@
     NSLog(@"objects in heldDiceSet %lu", [self.heldDiceSet count]);
 }
 
-@end
+-(void)resetDice {
+    [self.heldDiceSet removeAllObjects];
+}
 
-//
-//for (Dice *dice in self.die) {
-//    if (![self.heldDie containsObject:dice]) {
-//        [dice roll];
-//        NSLog(@"Rolled %d", dice.diceValue);
-//    } else {
-//        NSLog(@"Held [%d]", dice.diceValue);
-//    }
-//}
-//}
+@end
