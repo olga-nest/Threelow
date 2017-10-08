@@ -15,13 +15,13 @@ int main(int argc, const char * argv[]) {
             
             NSString *userInp = [inputHandler inputForPrompt:@"What Would you like to Do? \n - roll \n - hold/unhold \n - reset \n - quit"];
             
-            if ([userInp isEqual: @"quit"]) {
+            if ([userInp isEqual: @"quit"] || [userInp isEqual: @"q"])  {
                 gameOn = NO;
                 continue;
-            } else if ([userInp isEqual: @"roll"]) {
+            } else if ([userInp isEqual: @"roll"] || [userInp isEqual: @"r"]) {
                 [gameController roll];
             }
-                else if ([userInp isEqual: @"hold"] || [userInp isEqual:@"unhold"]) {
+                else if ([userInp isEqual: @"hold"] || [userInp isEqual:@"unhold"] || [userInp isEqual: @"h"]) {
                     NSString *userInp = [inputHandler inputForPrompt:@"Which Dice would you like to Hold? (number): "];
                     
                     //TODO: input chek
