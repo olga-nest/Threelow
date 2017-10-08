@@ -16,8 +16,9 @@
     
     int x = arc4random_uniform(6);
     _previousValue = [randomValuesArr objectAtIndex:x];
-    return [randomValuesArr objectAtIndex:x];
     
+    return [randomValuesArr objectAtIndex:x];
+
 }
 
 
