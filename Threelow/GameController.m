@@ -8,7 +8,7 @@
 {
     self = [super init];
     if (self) {
-        self.heldDiceSet = [[NSMutableSet alloc]init];
+        self.heldDiceSet = [[NSMutableArray alloc]init];
         self.diceArr = [[NSMutableArray alloc]init];
         
         for (int i = 0 ; i < 5; i++){
@@ -28,6 +28,7 @@
             NSLog(@"[%@]", [dice previousValue]);
         }
     }
+    NSLog(@"Your current score is %d", self.score);
 }
 
 - (void)hold: (Dice *) dieToHold {
@@ -44,7 +45,30 @@
     
 }
 
--(void)resetDice {
+-(int)score {
+    int score = 0;
+    //Sum of all held Dice
+    for (Dice *dice in self.heldDiceSet) {
+        if ([dice.randomValue isEqual: @"I"]) {
+            score = score + 1;
+        } else if ([dice.randomValue isEqual: @"II"]) {
+            score = score + 2;
+        } else if ([dice.randomValue isEqual: @"III"]) {
+            score = score + 3;
+        } else if ([dice.randomValue isEqual: @"IV"]) {
+            score = score + 4;
+        } else if ([dice.randomValue isEqual: @"V"]) {
+            score = score + 5;
+        } else if ([dice.randomValue isEqual: @"VI"]){
+            score = score +6;
+        } else {
+            NSLog(@"Oops! Something went wrong...");
+        }
+    }
+    return score;
+}
+
+- (void)resetDice {
     [self.heldDiceSet removeAllObjects];
 }
 

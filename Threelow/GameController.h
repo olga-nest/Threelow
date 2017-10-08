@@ -4,11 +4,12 @@
 @interface GameController : NSObject
 
 @property NSMutableArray *diceArr;
-@property NSMutableSet *heldDiceSet;
+@property NSMutableArray *heldDiceSet;
 
 
 - (void)roll;
 - (void)hold: (Dice *) dieToHold;
 - (void)resetDice;
+- (int)score;
 
 @end
