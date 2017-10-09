@@ -8,12 +8,13 @@
 {
     self = [super init];
     if (self) {
-        self.heldDiceSet = [[NSMutableArray alloc]init];
-        self.diceArr = [[NSMutableArray alloc]init];
+        _heldDiceSet = [[NSMutableArray alloc]init];
+        _diceArr = [[NSMutableArray alloc]init];
+        
         
         for (int i = 0 ; i < 5; i++){
             Dice *diceObj = [[Dice alloc] init];
-            [self.diceArr addObject: diceObj];
+            [_diceArr addObject: diceObj];
         
         }
     }
@@ -21,7 +22,7 @@
 }
 
 - (void)roll {
-    for (Dice *dice in _diceArr) {
+    for (Dice *dice in self.diceArr) {
         if ([self.heldDiceSet containsObject:dice] != YES) {
             NSLog(@"%@", [dice randomValue]);
         } else {
