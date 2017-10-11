@@ -70,6 +70,9 @@
 }
 
 - (void)resetDice {
+    for (Dice *dice in self.heldDiceSet) {
+        dice.isHeld = NO;
+    }
     [self.heldDiceSet removeAllObjects];
 }
 
