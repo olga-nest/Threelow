@@ -5,6 +5,7 @@
 
 @property NSMutableArray *diceArr;
 @property NSMutableArray *heldDiceSet;
+@property int scoreVar;
 
 
 - (void)roll;
